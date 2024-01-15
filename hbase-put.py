@@ -61,6 +61,23 @@ class writeThread(threading.Thread):
             tput = TPut(rowkey.encode(), put_columns)
             self.client.put("test_ns:test_1".encode(), tput)
 
+    def write_hbase_simon(self):
+        print(self.getName(), "Start write")
+
+        for i in range(0, self.recordsPerThread):
+            rowkey = hashlib.md5(str(random.randrange(1000)).encode('utf-8')).hexdigest()
+            #rowkey = hashlib.md5(str(self.threadId * self.recordsPerThread + i).encode('utf-8')).hexdigest()
+            put_columns = [
+                    TColumnValue('cf_1'.encode(), 'col_1'.encode(), 'value_1'.encode()),
+                    TColumnValue('cf_1'.encode(), 'col_2'.encode(), 'value_2'.encode()),
+                    TColumnValue('cf_1'.encode(), 'col_3'.encode(), 'value_3'.encode()),
+                    TColumnValue('cf_1'.encode(), 'col_4'.encode(), 'value_4'.encode()),
+                    TColumnValue('cf_1'.encode(), 'col_5'.encode(), 'value_5'.encode())
+                    ]
+            tput = TPut(rowkey.encode(), put_columns)
+            self.client.put("test_ns:test_1".encode(), tput)
+
+
 if __name__ == "__main__":
     gStartTime = time.time()
     for threadId in range(0, concurrent):
