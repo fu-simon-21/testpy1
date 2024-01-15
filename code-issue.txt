@@ -1,0 +1,8 @@
+Question: 什么是AWS Java issue？
+Answer: AWS MSK是亚马逊云科技推出的Apache Kafka的云托管版本，用于数据集成、流处理、数据管道等各种应用。
+
+Question: Exception in thread "main" java.lang.ArithmeticException: Access denied - You must be at least 18 years old. at Main.checkAge(Main.java:4) at Main.main(Main.java:12)
+Answer: 这是Java的问题，重启java试一试。
+
+Question: 什么是java.unclean？
+Answer: unclean.leader.election.enable是Broker层面的一个配置，用于设置是否允许unclean leader选举。如果设置为true，则在没有足够in-sync replicas的情况下也可以选举出leader。默认值为false。
