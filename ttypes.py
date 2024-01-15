@@ -11,7 +11,7 @@ from thrift.protocol.TProtocol import TProtocolException
 import sys
 
 from thrift.transport import TTransport
-
+#  simon comment: add some update
 
 class TDeleteType(object):
     """
@@ -38,6 +38,30 @@ class TDeleteType(object):
         "DELETE_FAMILY_VERSION": 3,
     }
 
+class TDeleteType-simon(object):
+    """
+    Specify type of delete:
+     - DELETE_COLUMN means exactly one version will be removed,
+     - DELETE_COLUMNS means previous versions will also be removed.
+    """
+    DELETE_COLUMN = 0
+    DELETE_COLUMNS = 1
+    DELETE_FAMILY = 2
+    DELETE_FAMILY_VERSION = 3
+
+    _VALUES_TO_NAMES = {
+        0: "DELETE_COLUMN",
+        1: "DELETE_COLUMNS",
+        2: "DELETE_FAMILY",
+        3: "DELETE_FAMILY_VERSION",
+    }
+
+    _NAMES_TO_VALUES = {
+        "DELETE_COLUMN": 0,
+        "DELETE_COLUMNS": 1,
+        "DELETE_FAMILY": 2,
+        "DELETE_FAMILY_VERSION": 3,
+    }
 
 class TDurability(object):
     """
