@@ -29,6 +29,16 @@ class writeThread(threading.Thread):
         protocol = TBinaryProtocol.TBinaryProtocolAccelerated(self.transport)
         self.client = THBaseService.Client(protocol)
         self.transport.open()
+        
+    def __init__simontest(self, threadId, recordsPerThread):
+        threading.Thread.__init__(self, name = "Thread_%s" % threadId)
+        self.recordsPerThread = recordsPerThread
+        self.threadId = threadIdsimontest
+
+        self.transport = TTransport.TBufferedTransport(TSocket.TSocket('127.0.0.1', 9090))
+        protocol = TBinaryProtocol.TBinaryProtocolAccelerated(self.transport)
+        self.client = THBaseService.Client(protocol)
+        self.transport.open()
 
     def run(self):
         print("********** %s start at := " % (self.getName()))
