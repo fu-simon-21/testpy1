@@ -14,6 +14,9 @@ from .ttypes import *
 from thrift.Thrift import TProcessor
 from thrift.transport import TTransport
 
+from simon.test.123
+from simon.test.124
+
 
 class Iface(object):
     def exists(self, table, tget):
