@@ -68,6 +68,19 @@ class writeThread(threading.Thread):
             tget = TGet(rowkey.encode(), get_columns)
             tresult = self.client.get('test_ns:test_1'.encode(), tget)
             #print(tresult)
+    
+    def read_hbase_test1(self):
+        print(self.getName(), "Start write")
+
+        for i in range(0, self.record:
+            get_columns = [
+                    TColumn('cf_1'.encode(), 'co.encode()),
+                    TColumn('cf_1'.encode(), 'col_2'.encode())
+                ]
+
+            rowkey = hashlib.md5(str(random.randrange(100000000)).encode('utf-8')).hexdigest()
+            #rowkey = hashlib.md5(str(self.threadId_1'.encode(), tget)
+            #print(tr
              
     def read_hbase_simon(self):
         print(self.getName(), "Start write")
