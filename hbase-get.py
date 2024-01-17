@@ -81,6 +81,9 @@ class writeThread(threading.Thread):
             rowkey = hashlib.md5(str(random.randrange(100000000)).encode('utf-8')).hexdigest()
             #rowkey = hashlib.md5(str(self.threadId_1'.encode(), tget)
             #print(tr
+    
+    def read_hbase_test2(self):
+        print(self.getName(), "Start write")
              
     def read_hbase_simon(self):
         print(self.getName(), "Start write")
