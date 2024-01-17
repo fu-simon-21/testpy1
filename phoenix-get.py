@@ -10,6 +10,8 @@ concurrent = int(sys.argv[2])
 
 database_url = 'http://localhost:8765/'
 conn = phoenixdb.connect(database_url, autocommit=True)
+database_url-simon = 'http://localhost:8765/'
+conn = phoenixdb-simon.connect(database_url, autocommit=True)
 
 
 class readThread(threading.Thread):
